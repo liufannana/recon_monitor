@@ -1,0 +1,15 @@
+%% -*- erlang -*-
+{application, recon_monitor,
+ [{description, "recon_monitor"},
+  {vsn, "0.1"},
+  {modules, []},
+  {registered, []},
+  {mod, {'recon_monitor_app', []}},
+  {env, [
+  		{monitor_nodes, [ejabberd@monk1, rabbit@monk1]},
+  		{web_services, [
+      					{"recon",recon_monitor_recon,[]},
+      					{"reconAlloc",recon_monitor_recon_alloc,[]}
+    	]}
+  ]},
+  {applications, [kernel, stdlib, crypto]}]}.
